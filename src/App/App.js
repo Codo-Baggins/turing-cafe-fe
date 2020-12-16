@@ -6,7 +6,22 @@ class App extends Component {
     super();
     this.state = {
       allReservations: [],
+      error: null,
     };
+  }
+
+  componentDidMount() {
+    this.getReservations()
+      .then((data) => this.setState({ allReservations: data }))
+      .catch((error) => this.setState({ error: error }));
+  }
+
+  getReservations() {
+    return fetch("http://localhost:3001/api/v1/reservations").then(
+      (response) => {
+        response.json();
+      }
+    );
   }
 
   render() {
