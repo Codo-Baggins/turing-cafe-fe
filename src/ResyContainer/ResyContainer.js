@@ -1,5 +1,6 @@
 import React from "react";
 import ResyCard from "../ResyCard/ResyCard";
+import "./ResyContainer.css";
 
 const ResyContainer = (props) => {
   // const { allReservations } = props;
@@ -14,7 +15,7 @@ const ResyContainer = (props) => {
       />
     );
   });
-  return <div>{reservations}</div>;
+  return <div className="resy-container">{reservations}</div>;
 };
 
 export default ResyContainer;
