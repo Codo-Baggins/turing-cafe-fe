@@ -13,21 +13,20 @@ class ReservationForm extends Component {
     };
   }
 
-  handleSubmit(props) {
-    props.preventDefault();
-    console.log(props);
+  handleSubmit = (event) => {
+    event.preventDefault();
     const nameField = document.getElementById("name-field");
     const dateField = document.getElementById("date-field");
     const timeField = document.getElementById("time-field");
     const numGuestsField = document.getElementById("num-guests-field");
-    props.placeReservation({
+    this.props.placeReservation({
       id: Date.now(),
-      name: nameField,
-      date: dateField,
-      time: timeField,
-      number: numGuestsField,
+      name: nameField.value,
+      date: dateField.value,
+      time: timeField.value,
+      number: numGuestsField.value,
     });
-  }
+  };
 
   render() {
     return (

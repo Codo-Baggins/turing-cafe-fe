@@ -27,11 +27,13 @@ class App extends Component {
     );
   };
 
-  placeReservation(newReservation) {
+  placeReservation = (newReservation) => {
+    console.log(this.state.allReservations);
     const reservationList = this.state.allReservations;
     reservationList.push(newReservation);
+    console.log(reservationList);
     this.setState({ allReservations: reservationList });
-  }
+  };
 
   render() {
     return (

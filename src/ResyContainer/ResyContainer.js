@@ -8,6 +8,7 @@ const ResyContainer = (props) => {
     return (
       <ResyCard
         id={reservation.id}
+        key={reservation.id}
         name={reservation.name}
         date={reservation.date}
         time={reservation.time}
