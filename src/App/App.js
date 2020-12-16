@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ResyContainer from "../ResyContainer/ResyContainer";
+// import ResyCard from "../ResyCard/ResyCard";
 import "./App.css";
 
 class App extends Component {
@@ -17,13 +18,13 @@ class App extends Component {
       .catch((error) => this.setState({ error: error }));
   }
 
-  getReservations() {
+  getReservations = () => {
     return fetch("http://localhost:3001/api/v1/reservations").then(
       (response) => {
-        response.json();
+        return response.json();
       }
     );
-  }
+  };
 
   render() {
     return (
@@ -31,7 +32,7 @@ class App extends Component {
         <h1 className="app-title">Turing Cafe Reservations</h1>
         <div className="resy-form"></div>
         <div className="resy-container">
-          <ResyContainter allReservations={this.allReservations} />
+          <ResyContainer allReservations={this.state.allReservations} />
         </div>
       </div>
     );

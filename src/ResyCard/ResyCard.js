@@ -1,4 +1,4 @@
-import React from "React";
+import React from "react";
 
 const ResyCard = (props) => {
   const { id, name, date, time, number } = props;
