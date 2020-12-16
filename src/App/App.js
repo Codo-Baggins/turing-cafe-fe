@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ResyContainer from "../ResyContainer/ResyContainer";
 // import ResyCard from "../ResyCard/ResyCard";
-import ReservationForm from '../ReservationForm/ReservationForm'
+import ReservationForm from "../ReservationForm/ReservationForm";
 import "./App.css";
 
 class App extends Component {
@@ -27,9 +27,10 @@ class App extends Component {
     );
   };
 
-  placeReservation() {
-    // const
-    // this.setState({allReservations: })
+  placeReservation(newReservation) {
+    const reservationList = this.state.allReservations;
+    reservationList.push(newReservation);
+    this.setState({ allReservations: reservationList });
   }
 
   render() {
