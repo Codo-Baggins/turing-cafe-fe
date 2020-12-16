@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ResyContainer from "../ResyContainer/ResyContainer";
 // import ResyCard from "../ResyCard/ResyCard";
+import ReservationForm from '../ReservationForm/ReservationForm'
 import "./App.css";
 
 class App extends Component {
@@ -26,11 +27,18 @@ class App extends Component {
     );
   };
 
+  placeReservation() {
+    // const
+    // this.setState({allReservations: })
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className="app-title">Turing Cafe Reservations</h1>
-        <div className="resy-form"></div>
+        <div className="resy-form">
+          <ReservationForm placeReservation={this.placeReservation} />
+        </div>
         <div className="resy-container">
           <ResyContainer allReservations={this.state.allReservations} />
         </div>
